@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fer's Interface</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/icons/favicon.ico" />
+</head>
+<body>
+  <div id="intro" class="hero">
+    <canvas class="matrix"></canvas>
+    <div class="hud">
+      <h1 id="hud-title"></h1>
+      <p id="hud-subtitle"></p>
+      <div id="hud-buttons" style="display: none;">
+        <br /><br />
+        <a id="btn-portafolio" class="btn" href="#">Ver Portafolio</a>
+        <a id="btn-cv" class="btn" href="#">Ver CV</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <section id="portfolio" class="portfolio-section">
+    <h2>Portafolio</h2>
+    <p>Esta es mi zona de proyectos, apps y creaciones destacadas.</p>
+    <div class="grid">
+      <!-- Aquí van tus tarjetas de portafolio -->
+      <div class="item">
+        <div class="project-left">
+          <img src="img/screenshots/LipidWise.png" alt="Proyecto 1" />
+        </div>
+        <div class="project-right">
+          <h3>LipidWise</h3>
+          <p>Solución Digital para la Prevención y Tratamiento de Enfermedades Cardiovasculares.</p>
+          <div class="tech-icons">
+            <img src="img/svg/unity-original.svg" alt="Unity" />
+            <img src="img/svg/csharp-original.svg" alt="C#" />
+            <img src="img/svg/github-original.svg" alt="Github" />
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="project-left">
+          <img src="assets/projects/proyecto2.jpg" alt="Proyecto 2" />
+        </div>
+        <div class="project-right">
+          <h3>Convérsame</h3>
+          <p>Descripción breve de la app o juego. Muy concisa, máximo dos líneas.</p>
+          <div class="tech-icons">
+            <img src="img/svg/html5-original.svg" alt="HTML5" />
+            <img src="img/svg/css3-original.svg" alt="CSS" />
+            <img src="img/svg/javascript-original.svg" alt="JS" />
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="project-left">
+          <img src="img/screenshots/Fer's Interface.JPG" alt="Proyecto 3" />
+        </div>
+        <div class="project-right">
+          <h3>Fer's Interface</h3>
+          <p>Descripción breve de la app o juego. Muy concisa, máximo dos líneas.</p>
+          <div class="tech-icons">
+            <img src="img/svg/html5-original.svg" alt="HTML5" />
+            <img src="img/svg/css3-original.svg" alt="CSS" />
+            <img src="img/svg/javascript-original.svg" alt="JS" />
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="project-left">
+          <img src="img/screenshots/Galaxy Shooter.JPG" alt="Proyecto 4" />
+        </div>
+        <div class="project-right">
+          <h3>Galaxy Shooter</h3>
+          <p>Videojuego casual de naves.</p>
+          <div class="tech-icons">
+            <img src="img/svg/unity-original.svg" alt="Unity" />
+            <img src="img/svg/csharp-original.svg" alt="C#" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="btn-volver" class="volver-btn">⬆ Volver al menú</button>
+  </section>
+</body>
+</html>
