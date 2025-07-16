@@ -57,7 +57,7 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
   // Espera de (520 ms)
   setTimeout(() => {
     // Ocultar la intro
-    document.getElementById("intro").style.display = "none";
+    //document.getElementById("intro").style.display = "none";
   }, 520);
 });
 
@@ -79,8 +79,8 @@ document.getElementById("btn-volver").addEventListener("click", () => {
   // Espera de (520 ms)
   setTimeout(() => {
     // Ocultar el portafolio
-    const portfolioSection = document.getElementById("portfolio");
-    portfolioSection.style.display = "none";
+    //const portfolioSection = document.getElementById("portfolio");
+    //portfolioSection.style.display = "none";
   }, 520);
 });
 
