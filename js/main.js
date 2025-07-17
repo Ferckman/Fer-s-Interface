@@ -41,8 +41,7 @@ function startJarvis() {
   });
 }
 
-
-// Click en botones
+// Botón Ver Portafolio
 document.getElementById("btn-portafolio").addEventListener("click", () => {
   playSound(clickSound);
 
@@ -57,17 +56,19 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
   // Espera de (520 ms)
   setTimeout(() => {
     // Ocultar la intro
-    //document.getElementById("intro").style.display = "none";
+    document.getElementById("intro").style.display = "none";
   }, 520);
 });
 
+// Botón Ver CV
 document.getElementById("btn-cv").addEventListener("click", () => {
   playSound(openSound);
 });
 
+// Botón Volver
 document.getElementById("btn-volver").addEventListener("click", () => {
   playSound(clickSound);
-  
+
   // Mostrar la intro de nuevo
   const introSection = document.getElementById("intro");
   introSection.style.display = "block";
@@ -79,9 +80,36 @@ document.getElementById("btn-volver").addEventListener("click", () => {
   // Espera de (520 ms)
   setTimeout(() => {
     // Ocultar el portafolio
-    //const portfolioSection = document.getElementById("portfolio");
-    //portfolioSection.style.display = "none";
+    const portfolioSection = document.getElementById("portfolio");
+    portfolioSection.style.display = "none";
   }, 520);
 });
 
+// Abrir el modal
+document.querySelectorAll(".btn-mas-info").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const modal = document.getElementById("info-modal");
+    const title = btn.getAttribute("data-title");
+    const description = btn.getAttribute("data-description");
+    const videoSrc = btn.getAttribute("data-video");
+
+    // Actualizar contenido del modal
+    modal.querySelector("h3").textContent = title;
+    modal.querySelector("p").textContent = description;
+    const video = modal.querySelector("video");
+
+    video.pause();
+    video.querySelector("source").src = videoSrc;
+    video.load();
+
+    modal.classList.remove("hidden");
+  });
+});
+
+// Cerrar el modal
+document.getElementById("close-modal").addEventListener("click", () => {
+  document.getElementById("info-modal").classList.add("hidden");
+});
+
+// Inicializar JARVIS al pulsar el botón inicial
 initStartButton(startJarvis);
