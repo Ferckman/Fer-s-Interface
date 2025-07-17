@@ -31,6 +31,12 @@
   margin-top: 40px;
 }
 
+@media (max-width: 768px) {
+  .portfolio-section .grid {
+    grid-template-columns: 1fr; /* Solo una columna */
+  }
+}
+
 .portfolio-section .item {
   display: flex;
   background: rgba(0, 255, 255, 0.05);
