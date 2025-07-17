@@ -125,7 +125,8 @@
   z-index: 2;
 }
 
-.project-image-wrapper:hover .project-hover {
+.project-image-wrapper:hover .project-hover,
+.project-image-wrapper.active .project-hover {
   opacity: 1;
 }
 
