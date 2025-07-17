@@ -2,12 +2,13 @@ import { initStartButton } from "./uiManager.js";
 import { startMatrixEffect } from "./matrix.js";
 import { TextTyper } from "./textTyper.js";
 import { clickSound, openSound, playSound } from "./audioManager.js";
+import { enableMobileProjectHoverFallback } from "./portfolioMovil.js";
 
 // Iniciar Matrix
 startMatrixEffect();
 
 // Tipado
-const typer = new TextTyper("audio/typing.mp3", 0.4);
+const typer = new TextTyper("audios/typing.mp3", 0.4);
 
 const hud = document.querySelector(".hud");
 const hudTitle = document.getElementById("hud-title");
@@ -113,3 +114,6 @@ document.getElementById("close-modal").addEventListener("click", () => {
 
 // Inicializar JARVIS al pulsar el botón inicial
 initStartButton(startJarvis);
+
+// Habilitar fallback de hover en móvil
+enableMobileProjectHoverFallback();
