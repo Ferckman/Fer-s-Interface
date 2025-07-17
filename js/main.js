@@ -46,19 +46,22 @@ function startJarvis() {
 document.getElementById("btn-portafolio").addEventListener("click", () => {
   playSound(clickSound);
 
-  // Mostrar portafolio
   const portfolioSection = document.getElementById("portfolio");
+  const introSection = document.getElementById("intro");
+
+  // Mostrar el portafolio antes de animar
   portfolioSection.style.display = "block";
   portfolioSection.classList.add("visible");
 
-  // Hacer scroll hacia el portafolio
-  portfolioSection.scrollIntoView({ behavior: "smooth" });
+  // Esperamos a que el layout se repinte antes de hacer scroll
+  requestAnimationFrame(() => {
+    portfolioSection.scrollIntoView({ behavior: "smooth" });
 
-  // Espera de (520 ms)
-  setTimeout(() => {
-    // Ocultar la intro
-    document.getElementById("intro").style.display = "none";
-  }, 520);
+    // Y esperamos al final del scroll (animación de ~500ms)
+    setTimeout(() => {
+      introSection.style.display = "none";
+    }, 600); // suficiente para completar scroll suave
+  });
 });
 
 // Botón Ver CV
