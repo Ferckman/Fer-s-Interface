@@ -73,20 +73,22 @@ document.getElementById("btn-cv").addEventListener("click", () => {
 document.getElementById("btn-volver").addEventListener("click", () => {
   playSound(clickSound);
 
-  // Mostrar la intro de nuevo
   const introSection = document.getElementById("intro");
+  const portfolioSection = document.getElementById("portfolio");
+
+  // Mostrar la intro
   introSection.style.display = "block";
   introSection.classList.add("visible");
 
-  // Hacer scroll arriba de todo
-  introSection.scrollIntoView({ behavior: "smooth" });
+  // Esperar al siguiente frame para asegurar el repintado
+  requestAnimationFrame(() => {
+    introSection.scrollIntoView({ behavior: "smooth" });
 
-  // Espera de (520 ms)
-  setTimeout(() => {
-    // Ocultar el portafolio
-    const portfolioSection = document.getElementById("portfolio");
-    portfolioSection.style.display = "none";
-  }, 520);
+    // Esperar que termine la animación de scroll antes de ocultar portfolio
+    setTimeout(() => {
+      portfolioSection.style.display = "none";
+    }, 600);
+  });
 });
 
 // Abrir el modal
