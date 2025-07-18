@@ -295,3 +295,10 @@
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .portfolio-section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
