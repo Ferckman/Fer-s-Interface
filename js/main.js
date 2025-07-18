@@ -4,13 +4,6 @@ import { TextTyper } from "./textTyper.js";
 import { clickSound, openSound, playSound } from "./audioManager.js";
 import { enableMobileProjectHoverFallback } from "./portfolioMovil.js";
 
-// Tipado
-const typer = new TextTyper("audios/typing.mp3", 0.4);
-const hud = document.querySelector(".hud");
-const hudTitle = document.getElementById("hud-title");
-const hudSubtitle = document.getElementById("hud-subtitle");
-const hudButtons = document.getElementById("hud-buttons");
-
 // Iniciar Matrix
 startMatrixEffect();
 
@@ -19,6 +12,13 @@ initStartButton(startJarvis);
 
 // Habilitar fallback de hover en móvil
 enableMobileProjectHoverFallback();
+
+// Tipado
+const typer = new TextTyper("audios/typing.mp3", 0.4);
+const hud = document.querySelector(".hud");
+const hudTitle = document.getElementById("hud-title");
+const hudSubtitle = document.getElementById("hud-subtitle");
+const hudButtons = document.getElementById("hud-buttons");
 
 function startJarvis() {
   
@@ -94,4 +94,30 @@ document.getElementById("btn-volver").addEventListener("click", () => {
       portfolioSection.style.display = "none";
     }, 600);
   });
+});
+
+// Abrir el modal
+document.querySelectorAll(".btn-mas-info").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const modal = document.getElementById("info-modal");
+    const title = btn.getAttribute("data-title");
+    const description = btn.getAttribute("data-description");
+    const videoSrc = btn.getAttribute("data-video");
+
+    // Actualizar contenido del modal
+    modal.querySelector("h3").textContent = title;
+    modal.querySelector("p").textContent = description;
+    const video = modal.querySelector("video");
+
+    video.pause();
+    video.querySelector("source").src = videoSrc;
+    video.load();
+
+    modal.classList.remove("hidden");
+  });
+});
+
+// Cerrar el modal
+document.getElementById("close-modal").addEventListener("click", () => {
+  document.getElementById("info-modal").classList.add("hidden");
 });

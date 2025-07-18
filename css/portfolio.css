@@ -1,5 +1,5 @@
 #portfolio {
-  display: none;
+  display: none; /* Oculto al principio */
 }
 
 .portfolio-section {
@@ -33,7 +33,7 @@
 
 @media (max-width: 768px) {
   .portfolio-section .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Solo una columna */
   }
 }
 
@@ -45,13 +45,6 @@
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   overflow: hidden;
   min-height: 200px;
-  flex-direction: row;
-}
-
-@media (max-width: 768px) {
-  .portfolio-section .item {
-    flex-direction: column;
-  }
 }
 
 .project-left {
@@ -101,7 +94,6 @@
   filter: drop-shadow(0 0 4px #00ffff);
 }
 
-/* === Efecto 3D estilo JARVIS === */
 .project-image-wrapper {
   position: relative;
   overflow: hidden;
@@ -137,20 +129,11 @@
   transform: scale(1.05);
   transition: opacity 0.4s ease;
   z-index: 2;
-  pointer-events: none;
 }
 
 .project-image-wrapper:hover .project-hover,
 .project-image-wrapper.active .project-hover {
   opacity: 1;
-  pointer-events: auto;
-}
-
-@media (hover: none) {
-  .project-image-wrapper:active .project-hover {
-    opacity: 1;
-    pointer-events: auto;
-  }
 }
 
 .project-hover video {
@@ -179,14 +162,13 @@
 
 .volver-btn {
   display: block;
-  margin: 60px auto 0 auto;
+  margin: 60px auto 0 auto; /* top margin + centrado horizontal */
   padding: 12px 24px;
   font-size: 1rem;
   transition: background 0.3s, transform 0.3s;
 }
 
-/*
-/* === Modal Estilo JARVIS === 
+/* === Modal Estilo JARVIS === */
 .info-modal {
   position: fixed;
   top: 0;
@@ -215,8 +197,8 @@
   border-radius: 20px;
   overflow: hidden;
   transform: perspective(800px) rotateX(5deg) scale(1.05);
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
-  animation: modalFadeIn 0.4s ease-out;
+  box-shadow: 0 0 40px rgba(0,255,255,0.4);
+  animation: modalFadeIn 0.4s ease-out;;
 }
 
 @keyframes modalFadeIn {
@@ -258,4 +240,3 @@
   font-size: 1.1rem;
   line-height: 1.5;
 }
-*/
