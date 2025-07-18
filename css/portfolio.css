@@ -185,7 +185,8 @@
   transition: background 0.3s, transform 0.3s;
 }
 
-/* === Modal Estilo JARVIS === */
+/*
+/* === Modal Estilo JARVIS === 
 .info-modal {
   position: fixed;
   top: 0;
@@ -257,3 +258,4 @@
   font-size: 1.1rem;
   line-height: 1.5;
 }
+*/
