@@ -8,3 +8,17 @@
   z-index: 0; /* Asegura que quede detrás del contenido visible */
   pointer-events: none; /* No interfiere con clics o interacciones */
 }
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  body {
+    transform: rotate(0deg) !important;
+    overflow: auto;
+  }
+
+  .warning-rotate {
+    display: block;
+    text-align: center;
+    color: red;
+    padding: 2rem;
+  }
+}
