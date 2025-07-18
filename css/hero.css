@@ -1,8 +1,19 @@
 .hero {
   position: relative;
-  height: 100vh; /* 👈 Ocupará toda la pantalla */
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px; /* Añade espacio interno para evitar desbordes en pantallas pequeñas */
+  box-sizing: border-box;
+}
+
+@media (max-height: 500px) {
+  .hero {
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-direction: column;
+  }
 }

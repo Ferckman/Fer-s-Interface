@@ -1,3 +1,4 @@
+/* === Animación de aparición de botones === */
 @keyframes fadeInBtn {
   from {
     opacity: 0;
@@ -9,6 +10,7 @@
   }
 }
 
+/* === Pulso brillante para botones especiales === */
 @keyframes pulseGlow {
   0% {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
@@ -21,6 +23,7 @@
   }
 }
 
+/* === Animación para mostrar botones HUD === */
 #hud-buttons {
   opacity: 0;
   transition: opacity 0.3s ease;

@@ -1,22 +1,18 @@
-body {
+body { 
   margin: 0;
   background: #000000;
   font-family: 'Share Tech Mono', monospace;
   color: #00ffff;
-  overflow: hidden;
   position: relative;
-  /*height: 100vh;*/
-  height: auto;
   min-height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  /* ❌ eliminado: overflow: hidden y redundancias */
 }
 
 .hud {
   display: none; /* Oculto por defecto */
   opacity: 0;
   transition: opacity 1s ease;
-  /* El resto de propiedades igual */
   position: absolute;
   z-index: 10;
   top: 50%;
