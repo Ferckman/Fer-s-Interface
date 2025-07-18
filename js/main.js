@@ -120,4 +120,7 @@ document.querySelectorAll(".btn-mas-info").forEach((btn) => {
 // Cerrar el modal
 document.getElementById("close-modal").addEventListener("click", () => {
   document.getElementById("info-modal").classList.add("hidden");
+  const modalVideo = document.querySelector("#info-modal video");
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
 });
