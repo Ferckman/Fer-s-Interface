@@ -8,26 +8,3 @@
   padding: 20px; /* Añade espacio interno para evitar desbordes en pantallas pequeñas */
   box-sizing: border-box;
 }
-
-@media (max-height: 500px) {
-  .hero {
-    height: auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    flex-direction: column;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-width: 768px) {
-  body {
-    transform: rotate(0deg) !important;
-    overflow: auto;
-  }
-
-  .warning-rotate {
-    display: block;
-    text-align: center;
-    color: red;
-    padding: 2rem;
-  }
-}
