@@ -2,6 +2,7 @@ import { initStartButton } from "./uiManager.js";
 import { startMatrixEffect } from "./matrix.js";
 import { TextTyper } from "./textTyper.js";
 import { clickSound, openSound, playSound } from "./audioManager.js";
+import { enableMobileProjectHoverFallback } from "./portfolioMovil.js";
 
 // Tipado
 const typer = new TextTyper("audios/typing.mp3", 0.4);
@@ -15,6 +16,9 @@ startMatrixEffect();
 
 // Inicializar JARVIS al pulsar el botón inicial
 initStartButton(startJarvis);
+
+// Habilitar fallback de hover en móvil
+enableMobileProjectHoverFallback();
 
 function startJarvis() {
   
