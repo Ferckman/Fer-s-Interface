@@ -2,18 +2,24 @@ export function startMatrixEffect(canvasSelector = ".matrix") {
   const canvas = document.querySelector(canvasSelector);
   const ctx = canvas.getContext("2d");
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  let fontSize = 16;
+  let columns;
+  let drops;
+
+  function init() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    columns = Math.floor(canvas.width / fontSize);
+    drops = Array(columns).fill(1);
+  }
 
   const chars = "アァイィウヴエカガキギクグケゲコゴサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
   const matrix = chars.split("");
-  const fontSize = 16;
-  const columns = canvas.width / fontSize;
-  const drops = Array(Math.floor(columns)).fill().map(() => Math.floor(Math.random() * canvas.height / fontSize));
 
   function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.02)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
     ctx.fillStyle = "#00ffff";
     ctx.font = `${fontSize}px Share Tech Mono`;
 
@@ -24,11 +30,23 @@ export function startMatrixEffect(canvasSelector = ".matrix") {
       if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
         drops[i] = 0;
       }
-
       drops[i]++;
     }
   }
 
-  setInterval(draw, 50);
-  window.addEventListener('resize', () => location.reload());
+  let intervalId;
+
+  function start() {
+    init();
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(draw, 50);
+  }
+
+  // Inicializar por primera vez
+  start();
+
+  // Ajustar canvas al redimensionar sin recargar la página
+  window.addEventListener("resize", () => {
+    start();
+  });
 }

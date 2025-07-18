@@ -1,4 +1,4 @@
-
+/*
 export function enableMobileProjectHoverFallback() {
   document.querySelectorAll('.project-image-wrapper').forEach(wrapper => {
     wrapper.addEventListener('click', (e) => {
@@ -18,3 +18,4 @@ export function enableMobileProjectHoverFallback() {
     });
   });
 }
+*/
