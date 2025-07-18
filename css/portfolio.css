@@ -241,8 +241,8 @@
   line-height: 1.5;
 }
 
-/* ✅ Corrección real para móviles: imagen arriba, texto abajo */
-@media screen and (max-width: 768px) {
+/* ✅ Corrección para móviles: vertical y horizontal */
+@media screen and (max-width: 768px), (orientation: landscape) and (max-width: 1024px) {
   .portfolio-section .grid {
     grid-template-columns: 1fr;
   }
@@ -257,6 +257,10 @@
     flex: none;
   }
 
+  .project-left {
+    max-height: 200px;
+  }
+
   .project-left img,
   .project-hover video {
     width: 100%;
@@ -264,13 +268,9 @@
     object-fit: cover;
   }
 
-  .project-left {
-    max-height: 200px;
-  }
-
   .project-hover {
-    justify-content: flex-start;
-    padding-top: 20px;
+    justify-content: center;
+    padding: 16px;
   }
 
   .project-right {
