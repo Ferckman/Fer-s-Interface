@@ -1,6 +1,6 @@
 export function initStartButton(callback) {
   const btn = document.createElement("button");
-  btn.textContent = "Encender núcleo de control3";
+  btn.textContent = "Encender núcleo de control4";
   btn.className = "start-btn";
   document.body.appendChild(btn);
 
