@@ -298,7 +298,7 @@
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
   .portfolio-section {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
