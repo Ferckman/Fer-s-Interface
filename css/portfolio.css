@@ -137,11 +137,14 @@
 }
 
 .project-hover video {
-  max-width: 90%;
-  height: auto;
+  display: block;
+  margin: 0 auto; /* ✅ Centra horizontalmente */
+  width: 100%;
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  margin-bottom: 10px;
 }
 
 .btn {
