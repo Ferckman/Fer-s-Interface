@@ -118,17 +118,18 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9; /* ✅ Fija la altura proporcional al ancho */
   background: rgba(0, 255, 255, 0.1);
   backdrop-filter: blur(4px);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transform: scale(1.05);
   transition: opacity 0.4s ease;
   z-index: 2;
+  overflow: hidden; /* ✅ Oculta partes fuera del área */
+  border-radius: 10px;
 }
 
 .project-image-wrapper:hover .project-hover,
@@ -137,14 +138,20 @@
 }
 
 .project-hover video {
-  display: block;
-  margin: 0 auto; /* ✅ Centra horizontalmente */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 100%;
-  max-height: 160px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* ✅ Rellena el contenedor sin deformar */
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.project-hover .btn {
+  position: relative;
+  z-index: 3;
+  margin-top: 10px;
 }
 
 .btn {
