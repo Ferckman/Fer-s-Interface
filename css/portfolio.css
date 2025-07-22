@@ -55,6 +55,8 @@
   transition: box-shadow 0.3s ease;
   cursor: pointer; /* ✅ Opcional: indica que es clicable */
   border-radius: 14px;
+  padding: 4px;
+  box-sizing: border-box;
 }
 
 .project-left img {
