@@ -58,14 +58,22 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
   portfolioSection.style.display = "block";
   portfolioSection.classList.add("visible");
 
-  // Esperamos a que el layout se repinte antes de hacer scroll
   requestAnimationFrame(() => {
-    portfolioSection.scrollIntoView({ behavior: "smooth" });
+    const isMobileVertical = window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
 
-    // Y esperamos al final del scroll (animación de ~500ms)
+    if (isMobileVertical) {
+      // Ajuste manual del scroll para móvil en vertical
+      const offset = 100;
+      const y = portfolioSection.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
+      // Scroll normal en PC o móvil horizontal
+      portfolioSection.scrollIntoView({ behavior: "smooth" });
+    }
+
     setTimeout(() => {
       introSection.style.display = "none";
-    }, 600); // suficiente para completar scroll suave
+    }, 600);
   });
 });
 
