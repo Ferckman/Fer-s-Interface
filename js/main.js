@@ -102,26 +102,37 @@ document.getElementById("btn-volver").addEventListener("click", () => {
   });
 });
 
-// Abrir el modal
+// Abrir modal con botones "Más información"
 document.querySelectorAll(".btn-mas-info").forEach((btn) => {
   btn.addEventListener("click", () => {
-    const modal = document.getElementById("info-modal");
-    const title = btn.getAttribute("data-title");
-    const description = btn.getAttribute("data-description");
-    const videoSrc = btn.getAttribute("data-video");
-
-    // Actualizar contenido del modal
-    modal.querySelector("h3").textContent = title;
-    modal.querySelector("p").textContent = description;
-    const video = modal.querySelector("video");
-
-    video.pause();
-    video.querySelector("source").src = videoSrc;
-    video.load();
-
-    modal.classList.remove("hidden");
+    abrirModal(btn);
   });
 });
+
+// Abrir modal con iconos "info"
+document.querySelectorAll(".info-icon").forEach((icon) => {
+  icon.addEventListener("click", () => {
+    abrirModal(icon);
+  });
+});
+
+// Función común para abrir el modal
+function abrirModal(element) {
+  const modal = document.getElementById("info-modal");
+  const title = element.getAttribute("data-title");
+  const description = element.getAttribute("data-description");
+  const videoSrc = element.getAttribute("data-video");
+
+  modal.querySelector("h3").textContent = title;
+  modal.querySelector("p").textContent = description;
+
+  const video = modal.querySelector("video");
+  video.pause();
+  video.querySelector("source").src = videoSrc;
+  video.load();
+
+  modal.classList.remove("hidden");
+}
 
 // Cerrar el modal
 document.getElementById("close-modal").addEventListener("click", () => {
