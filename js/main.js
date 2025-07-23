@@ -62,7 +62,7 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
 
     if (isMobileVertical) {
       // Más compensación para móviles verticales (por notch o toolbars)
-      const offset = 180; // prueba 160–200 si aún no es suficiente
+      const offset = 150; // prueba 160–200 si aún no es suficiente
       const y = portfolioSection.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top: y, behavior: "smooth" });
     } else {
