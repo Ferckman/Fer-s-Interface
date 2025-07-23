@@ -151,7 +151,7 @@
               <button class="btn btn-mas-info"
                 data-title="Galaxy Shooter"
                 data-description="Juego arcade de disparos espaciales creado en Unity."
-                data-video="videos/LipidWise.mp4">
+                data-video="videos/Galaxy_Shooter.mp4">
                 Más información
               </button>
             </div>
@@ -166,7 +166,7 @@
               class="info-icon"
               data-title="Galaxy Shooter"
               data-description="Juego arcade de disparos espaciales creado en Unity"
-              data-video="videos/LipidWise.mp4"
+              data-video="videos/Galaxy_Shooter.mp4"
             />
           </h3>
           <p>Juego arcade de disparos espaciales creado en Unity.</p>
@@ -184,15 +184,35 @@
   <!-- Modal -->
   <div id="info-modal" class="info-modal hidden">
     <div class="modal-content">
-      <video autoplay muted loop>
-        <source src="videos/LipidWise.mp4" type="video/mp4" />
-        Tu navegador no soporta video HTML5.
-      </video>
       <div class="modal-text">
         <h3>Título del Proyecto</h3>
-        <p>Aquí puedes poner una descripción más detallada del proyecto, con tecnologías, objetivos y cualquier información extra.</p>
-        <button id="open-modal" class="btn">Abrir</button>
-        <button id="close-modal" class="btn">Cerrar</button>
+
+        <!-- Imágenes -->
+        <div class="modal-images">
+          <img src="img/screenshots/img1.jpg" alt="Imagen 1" />
+          <img src="img/screenshots/img2.jpg" alt="Imagen 2" />
+          <img src="img/screenshots/img3.jpg" alt="Imagen 3" />
+        </div>
+
+        <!-- Párrafos -->
+        <div class="modal-paragraphs">
+          <p>Primer párrafo con detalles del proyecto.</p>
+          <p>Segundo párrafo explicando tecnologías usadas.</p>
+          <p>Tercer párrafo con resultados o enlaces.</p>
+        </div>
+
+        <!-- Video con sonido -->
+        <div class="modal-video-box">
+          <video controls muted>
+            <source src="videos/LipidWise.mp4" type="video/mp4" />
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+
+        <div class="modal-buttons">
+          <button id="open-modal" class="btn">Abrir</button>
+          <button id="close-modal" class="btn">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>

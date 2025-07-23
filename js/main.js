@@ -132,6 +132,7 @@ function abrirModal(element) {
   video.load();
 
   modal.classList.remove("hidden");
+  document.body.classList.add("no-scroll"); // 🔒 Evita scroll de fondo
 }
 
 // Cerrar el modal
@@ -140,4 +141,5 @@ document.getElementById("close-modal").addEventListener("click", () => {
   const modalVideo = document.querySelector("#info-modal video");
   modalVideo.pause();
   modalVideo.currentTime = 0;
+  document.body.classList.remove("no-scroll"); // 🔓 Reactiva scroll de fondo
 });

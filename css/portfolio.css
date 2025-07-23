@@ -192,6 +192,11 @@
   transition: background 0.3s, transform 0.3s;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 /* ✅ Corrección para móviles: vertical y horizontal */
 @media screen and (max-width: 768px), (orientation: landscape) and (max-width: 1024px) {
   .portfolio-section .grid {
