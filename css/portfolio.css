@@ -55,7 +55,7 @@
   transition: box-shadow 0.3s ease;
   cursor: pointer; /* ✅ Opcional: indica que es clicable */
   border-radius: 14px;
-  padding: 4px;
+  padding: 2px;
   box-sizing: border-box;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .project-image-wrapper:hover {
-  transform: perspective(800px) rotateY(5deg) scale(1.03);
+  transform: perspective(800px) scale(0.9);
 }
 
 .project-image-wrapper img {
