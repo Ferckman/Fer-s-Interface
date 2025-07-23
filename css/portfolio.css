@@ -1,5 +1,6 @@
 #portfolio {
   display: none; /* Oculto al principio */
+  scroll-margin-top: 100px;
 }
 
 .portfolio-section {
@@ -55,7 +56,7 @@
   transition: box-shadow 0.3s ease;
   cursor: pointer; /* ✅ Opcional: indica que es clicable */
   border-radius: 14px;
-  padding: 2px;
+  padding: 1px;
   box-sizing: border-box;
 }
 
