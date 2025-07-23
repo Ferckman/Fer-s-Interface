@@ -54,7 +54,6 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
   const portfolioSection = document.getElementById("portfolio");
   const introSection = document.getElementById("intro");
 
-  // Mostrar el portafolio antes de animar
   portfolioSection.style.display = "block";
   portfolioSection.classList.add("visible");
 
@@ -62,18 +61,17 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
     const isMobileVertical = window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
 
     if (isMobileVertical) {
-      // Ajuste manual del scroll para móvil en vertical
-      const offset = 100;
-      const y = portfolioSection.getBoundingClientRect().top + window.pageYOffset - offset;
+      // Más compensación para móviles verticales (por notch o toolbars)
+      const offset = 180; // prueba 160–200 si aún no es suficiente
+      const y = portfolioSection.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top: y, behavior: "smooth" });
     } else {
-      // Scroll normal en PC o móvil horizontal
       portfolioSection.scrollIntoView({ behavior: "smooth" });
     }
 
     setTimeout(() => {
       introSection.style.display = "none";
-    }, 600);
+    }, 700); // pequeño margen extra si el scroll es más lento en móvil
   });
 });
 
