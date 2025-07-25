@@ -102,13 +102,6 @@ document.getElementById("btn-volver").addEventListener("click", () => {
   });
 });
 
-// Abrir modal con botones "Más información"
-document.querySelectorAll(".btn-mas-info").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    abrirModal(btn);
-  });
-});
-
 // Abrir modal con iconos "info"
 document.querySelectorAll(".info-icon").forEach((icon) => {
   icon.addEventListener("click", () => {
@@ -120,11 +113,12 @@ document.querySelectorAll(".info-icon").forEach((icon) => {
 function abrirModal(element) {
   const modal = document.getElementById("info-modal");
   const title = element.getAttribute("data-title");
-  const description = element.getAttribute("data-description");
   const videoSrc = element.getAttribute("data-video");
+  const contentHTML = element.getAttribute("data-modal-content");
 
   modal.querySelector("h3").textContent = title;
-  modal.querySelector("p").textContent = description;
+  const contentBox = modal.querySelector(".modal-paragraphs");
+  contentBox.innerHTML = contentHTML;
 
   const video = modal.querySelector("video");
   video.pause();
