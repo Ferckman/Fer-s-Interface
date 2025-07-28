@@ -1,0 +1,10 @@
+body,
+button,
+a,
+input,
+textarea,
+select,
+label,
+* {
+  cursor: url("../img/screenshots/puntero.png"), auto;
+}

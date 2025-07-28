@@ -53,7 +53,7 @@
   position: relative;
   animation: glow 1.2s infinite ease-in-out;
   transition: box-shadow 0.3s ease;
-  cursor: pointer; /* ✅ Opcional: indica que es clicable */
+  cursor: url("../img/screenshots/selection.png"), auto;
   border-radius: 14px;
   padding: 1px;
   box-sizing: border-box;
@@ -175,7 +175,7 @@
   color: #00ffff;
   font-weight: bold;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: url("../img/screenshots/selection.png"), auto;
   transition: all 0.3s ease;
 }
 
@@ -203,7 +203,7 @@
   height: 32px;
   margin-left: 8px;
   vertical-align: middle;
-  cursor: pointer;
+  cursor: url("../img/screenshots/selection.png"), auto;
   transition: transform 0.2s ease;
 }
 

@@ -10,7 +10,7 @@
   transition: all 0.3s ease;
   font-family: 'Share Tech Mono', monospace;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: url("../img/screenshots/selection.png"), auto;
 }
 
 .btn:hover {
@@ -31,7 +31,7 @@
   border: 2px solid #00ffff;
   border-radius: 10px;
   padding: 15px 30px;
-  cursor: pointer;
+  cursor: url("../img/screenshots/selection.png"), auto;
   z-index: 20;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);

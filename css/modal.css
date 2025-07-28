@@ -109,7 +109,7 @@
   right: 15px;
   width: 30px;
   height: auto;
-  cursor: pointer;
+  cursor: url("../img/screenshots/selection.png"), auto;
   z-index: 10;
   opacity: 0.8;
   transition: transform 0.2s ease;
