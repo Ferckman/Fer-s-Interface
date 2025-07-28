@@ -102,6 +102,19 @@ document.getElementById("btn-volver").addEventListener("click", () => {
   });
 });
 
+// Click en el botón "Cerrar"
+document.getElementById("close-modal").addEventListener("click", cerrarModal);
+
+// Click en la flecha "Volver"
+document.getElementById("modal-back-btn").addEventListener("click", cerrarModal);
+
+// Click fuera del modal
+document.getElementById("info-modal").addEventListener("click", (e) => {
+  if (e.target.id === "info-modal") {
+    cerrarModal();
+  }
+});
+
 // Abrir modal con iconos "info"
 document.querySelectorAll(".info-icon").forEach((icon) => {
   icon.addEventListener("click", () => {
@@ -127,13 +140,16 @@ function abrirModal(element) {
 
   modal.classList.remove("hidden");
   document.body.classList.add("no-scroll"); // 🔒 Evita scroll de fondo
+
+  modal.querySelector(".modal-content").scrollTop = 0;
 }
 
-// Cerrar el modal
-document.getElementById("close-modal").addEventListener("click", () => {
-  document.getElementById("info-modal").classList.add("hidden");
-  const modalVideo = document.querySelector("#info-modal video");
+function cerrarModal() {
+  const modal = document.getElementById("info-modal");
+  const modalVideo = modal.querySelector("video");
+
+  modal.classList.add("hidden");
   modalVideo.pause();
   modalVideo.currentTime = 0;
-  document.body.classList.remove("no-scroll"); // 🔓 Reactiva scroll de fondo
-});
+  document.body.classList.remove("no-scroll");
+}
