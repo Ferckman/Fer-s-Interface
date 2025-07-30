@@ -210,3 +210,12 @@
 .info-icon:hover {
   transform: scale(1.2);
 }
+
+/*Icono de plataforma*/
+.platform-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 1px #000000aa);
+}

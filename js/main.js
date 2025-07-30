@@ -128,19 +128,39 @@ function abrirModal(element) {
   const title = element.getAttribute("data-title");
   const videoSrc = element.getAttribute("data-video");
   const contentHTML = element.getAttribute("data-modal-content");
+  const platformLogos = element.getAttribute("data-platform-logos");
 
-  modal.querySelector("h3").textContent = title;
+  // Título del proyecto
+  const titleElement = modal.querySelector("h3");
+  titleElement.textContent = title;
+
+  // Añadir logos si existen
+  if (platformLogos) {
+    const logosArray = platformLogos.split(",");
+    logosArray.forEach((logo) => {
+      const img = document.createElement("img");
+      img.src = logo.trim();
+      img.alt = "Plataforma";
+      img.classList.add("platform-icon");
+      titleElement.appendChild(img);
+    });
+  }
+
+  // Contenido del modal
   const contentBox = modal.querySelector(".modal-paragraphs");
   contentBox.innerHTML = contentHTML;
 
+  // Video
   const video = modal.querySelector("video");
   video.pause();
   video.querySelector("source").src = videoSrc;
   video.load();
 
+  // Mostrar modal
   modal.classList.remove("hidden");
   document.body.classList.add("no-scroll"); // 🔒 Evita scroll de fondo
 
+  // Hacer scroll arriba en el modal
   modal.querySelector(".modal-content").scrollTop = 0;
 }
 
