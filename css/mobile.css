@@ -90,7 +90,13 @@
 
   .modal-text ul {
   font-size: 0.8rem;
-}
+  }
+
+  /*Icono de plataforma*/
+  .platform-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
