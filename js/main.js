@@ -75,12 +75,13 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
   });
 });
 
-/*
+
 // Botón Ver CV
 document.getElementById("btn-cv").addEventListener("click", () => {
   playSound(openSound);
+  window.open("cv.html", "_blank");
 });
-*/
+
 
 // Botón Volver
 document.getElementById("btn-volver").addEventListener("click", () => {
