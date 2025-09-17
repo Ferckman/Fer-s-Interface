@@ -97,6 +97,15 @@
     width: 20px;
     height: 20px;
   }
+
+  /* Ajustes en el modal */
+  .modal-content {
+    width: 95%;          /* ocupa casi todo el ancho */
+    max-width: none;     /* sin límite horizontal */
+    max-height: 85vh;    /* deja un poco de margen arriba/abajo */
+    border-radius: 12px; /* menos curva para que no se "coma" espacio */
+    transform: none;     /* sin inclinación, se ve más limpio en móvil */
+  }
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
