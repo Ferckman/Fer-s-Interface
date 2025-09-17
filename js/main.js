@@ -35,7 +35,7 @@ function startJarvis() {
       setTimeout(() => {
         typer.type({
           element: hudSubtitle,
-          text: "Soy tu asistente digital. Desde aquí puedes acceder a mi currículum, proyectos, juegos y apps móviles.",
+          text: "Soy tu asistente digital. Desde aquí puedes acceder a mis proyectos, juegos y apps móviles.",
           speed: 25,
           onFinish: () => {
             hudButtons.style.display = "block";
@@ -75,10 +75,12 @@ document.getElementById("btn-portafolio").addEventListener("click", () => {
   });
 });
 
+/*
 // Botón Ver CV
 document.getElementById("btn-cv").addEventListener("click", () => {
   playSound(openSound);
 });
+*/
 
 // Botón Volver
 document.getElementById("btn-volver").addEventListener("click", () => {

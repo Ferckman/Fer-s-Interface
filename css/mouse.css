@@ -8,3 +8,7 @@ label,
 * {
   cursor: url("../img/screenshots/puntero.png"), auto;
 }
+
+#gameContainer canvas {
+  cursor: url("../img/screenshots/puntero.png"), auto;
+}

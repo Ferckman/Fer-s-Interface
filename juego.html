@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galaxy Shooter WebGL</title>
+  <link rel="stylesheet" href="css/games/main_galaxy.css" />
+</head>
+<body>
+  <div id="game-container">
+    <!-- Canvas donde Unity dibuja el juego -->
+    <canvas id="unity-canvas"></canvas>
+
+    <!-- Loading bar -->
+    <div id="loading-bar">
+      <div id="progress-bar"></div>
+    </div>
+  </div>
+
+  <script src="Build/GalaxyGameWebGL.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "Build/GalaxyGameWebGL.data.unityweb",
+      frameworkUrl: "Build/GalaxyGameWebGL.framework.js.unityweb",
+      codeUrl: "Build/GalaxyGameWebGL.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "TuNombre",
+      productName: "Galaxy Shooter",
+      productVersion: "1.0",
+    }, (progress) => {
+      document.querySelector("#progress-bar").style.width = (progress * 100) + "%";
+    }).then((unityInstance) => {
+      document.querySelector("#loading-bar").style.display = "none";
+    }).catch((message) => {
+      alert(message);
+    });
+  </script>
+
+  <script>
+    function isWebGLAvailable() {
+      try {
+        var canvas = document.createElement("canvas");
+        return !!window.WebGLRenderingContext && (
+          canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
+        );
+      } catch (e) {
+        return false;
+      }
+    }
+
+    if (!isWebGLAvailable()) {
+      document.body.innerHTML = `
+        <div class="webgl-error">
+          <h2>⚠️ WebGL no está disponible</h2>
+          <p>Tu navegador no soporta WebGL o está desactivado.<br>
+          Por favor, actualiza tu navegador o prueba con otro como
+          <strong>Chrome, Firefox o Safari</strong>.</p>
+        </div>`;
+    }
+  </script>
+</body>
+</html>
