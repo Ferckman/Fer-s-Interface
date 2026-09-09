@@ -48,7 +48,7 @@
   }
 
   .project-hover video {
-    object-fit: contain;
+    object-fit: cover;
   }
   
   .project-hover .btn {

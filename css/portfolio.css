@@ -112,6 +112,9 @@
   border-radius: 10px;
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
+  /* CAMBIO AQUÍ: Forzamos la proporción a 16:9 para que sea rectangular, no cuadrado */
+  aspect-ratio: 16 / 9;
+  height: auto;
 }
 
 .project-image-wrapper:hover {
@@ -129,9 +132,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* ✅ Esto centra verticalmente */
+  justify-content: center; /* Centra verticalmente */
   gap: 10px;
-  padding: 20px 16px;
+  padding: 16px;
   position: absolute;
   top: 0;
   left: 0;
@@ -141,7 +144,7 @@
   backdrop-filter: blur(4px);
   opacity: 0;
   transform: scale(1.05);
-  transition: none;
+  transition: opacity 0.4s ease; /* Añadida transición suave */
   z-index: 2;
   border-radius: 10px;
   overflow: hidden;
@@ -153,17 +156,19 @@
 }
 
 .project-hover video {
+  position: absolute; /* Volvemos al posicionamiento absoluto para que llene el wrapper */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  max-height: 85vh;
-  max-width: 85vh;
+  height: 100%;
+  /* CAMBIO AQUÍ: Usamos cover. Como el wrapper ya es 16:9 (la proporción del video),
+     el video llenará todo el espacio perfectamente con recortes mínimos o nulos. */
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  flex-shrink: 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  /* Quitamos margin: auto y background-color que ya no hacen falta */
+  margin: 0;
+  background-color: transparent;
 }
 
 .project-hover .btn {
