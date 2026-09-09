@@ -133,11 +133,14 @@ function abrirModal(element) {
   const contentHTML = element.getAttribute("data-modal-content");
   const platformLogos = element.getAttribute("data-platform-logos");
 
-  // Título del proyecto
-  const titleElement = modal.querySelector("h3");
-  titleElement.textContent = title;
+  // Título del proyecto (actualiza solo el texto del span)
+  const titleTextElement = modal.querySelector(".modal-title-text");
+  titleTextElement.textContent = title;
 
-  // Añadir logos si existen
+  // Limpiar y añadir logos de forma segura en su contenedor exclusivo
+  const iconsContainer = modal.querySelector(".modal-platform-icons");
+  iconsContainer.innerHTML = ""; // Borra los iconos anteriores para que no se dupliquen
+
   if (platformLogos) {
     const logosArray = platformLogos.split(",");
     logosArray.forEach((logo) => {
@@ -145,7 +148,7 @@ function abrirModal(element) {
       img.src = logo.trim();
       img.alt = "Plataforma";
       img.classList.add("platform-icon");
-      titleElement.appendChild(img);
+      iconsContainer.appendChild(img);
     });
   }
 

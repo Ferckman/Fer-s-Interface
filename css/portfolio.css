@@ -48,9 +48,12 @@
 }
 
 .project-left {
-  flex: 2;
+  flex: 1.2;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: glow 1.2s infinite ease-in-out;
   transition: box-shadow 0.3s ease;
   cursor: url("../img/screenshots/selection.png"), auto;
@@ -67,11 +70,12 @@
 }
 
 .project-right {
-  flex: 1;
+  flex: 1.5;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-self: center;
   color: #00ffff;
   text-align: left;
 }
@@ -103,6 +107,7 @@
 
 .project-image-wrapper {
   position: relative;
+  width: 100%;
   overflow: hidden;
   border-radius: 10px;
   transform-style: preserve-3d;
