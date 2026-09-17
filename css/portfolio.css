@@ -47,6 +47,30 @@
   min-height: 200px;
 }
 
+/* Posicionamiento relativo para colocar la insignia */
+.item.featured {
+  position: relative;
+  border-color: #ff2a5f; /* Cambia el borde a un tono magenta/rojo neón */
+  box-shadow: 0 0 20px rgba(255, 42, 95, 0.4); /* Resplandor especial */
+}
+
+/* Insignia / Badge flotante */
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #ff2a5f;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #ff2a5f;
+  z-index: 2;
+}
+
 /* Columna izquierda */
 .project-left {
   overflow: hidden;
