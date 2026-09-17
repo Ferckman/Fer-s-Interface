@@ -1,0 +1,22 @@
+/* Iconos de tecnologias */
+.tech-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.tech-icons img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #00ffff);
+}
+
+/*Icono de plataforma*/
+.platform-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 1px #000000aa);
+}

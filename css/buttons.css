@@ -2,23 +2,25 @@
   margin-top: 20px;
   display: inline-block;
   padding: 10px 20px;
-  border: 1px solid #00ffff;
-  border-radius: 8px;
+  border: 2px solid #00ffff;
+  border-radius: 10px;
   color: #00ffff;
   text-decoration: none;
-  background: transparent;
+  background-color: transparent;
   transition: all 0.3s ease;
   font-family: 'Share Tech Mono', monospace;
   font-size: 1rem;
+  font-weight: bold;
   cursor: url("../img/screenshots/selection.png"), auto;
 }
 
 .btn:hover {
-  background: #00ffff;
+  background-color: #00ffff;
   color: #000;
   box-shadow: 0 0 15px #00ffff;
 }
 
+/* Botón Start */
 .start-btn {
   position: absolute;
   top: 50%;
@@ -49,3 +51,12 @@
   transform: translate(-50%, -50%) scale(0.9);
   transition: all 0.3s ease;
 }
+
+.volver-btn {
+  display: block;
+  margin: 60px auto 0 auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.3s;
+}
+

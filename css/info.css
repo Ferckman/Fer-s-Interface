@@ -1,0 +1,15 @@
+/* Botón información */
+.info-icon {
+  width: 28px;
+  height: 28px;
+  margin-left: 8px;
+  vertical-align: middle;
+  cursor: url("../img/screenshots/selection.png"), auto;
+  /*transition: transform 0.2s ease, filter 0.2s ease;*/
+  animation: redGlow 2s infinite ease-in-out;
+}
+
+.info-icon:hover {
+  transform: scale(5) rotate(15deg);
+  filter: drop-shadow(0 0 14px #ff2a5f);
+}

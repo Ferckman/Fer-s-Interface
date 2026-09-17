@@ -39,3 +39,15 @@
     box-shadow: 0 0 40px rgba(0, 255, 255, 0.9); /* más grande y más opaco */
   }
 }
+
+/* === Animación reutilizable de pulso rojo neón === */
+@keyframes redGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px #ff2a5f);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #ff2a5f);
+    transform: scale(1.15);
+  }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+  <defs>
+    <!-- Glow Effect Rojo -->
+    <filter id="red-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fondo oscuro interior -->
+  <circle cx="50" cy="50" r="42" fill="#120305" />
+
+  <!-- Anillos exteriores e intermedios en rojo neón -->
+  <circle cx="50" cy="50" r="42" stroke="#ff2a5f" stroke-width="3" fill="none" opacity="0.5" />
+  <circle cx="50" cy="50" r="36" stroke="#ff2a5f" stroke-dasharray="8 4" stroke-width="2.5" fill="none" filter="url(#red-glow)" />
+
+  <!-- Símbolo de Información (i) -->
+  <circle cx="50" cy="32" r="5" fill="#ff2a5f" filter="url(#red-glow)" />
+  <rect x="45" y="44" width="10" height="26" rx="5" fill="#ff2a5f" filter="url(#red-glow)" />
+</svg>

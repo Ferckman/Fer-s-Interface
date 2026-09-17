@@ -47,43 +47,53 @@
   min-height: 200px;
 }
 
+/* Columna izquierda */
 .project-left {
-  flex: 1.2;
   overflow: hidden;
+  flex: 1.2;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: glow 1.2s infinite ease-in-out;
-  transition: box-shadow 0.3s ease;
-  cursor: url("../img/screenshots/selection.png"), auto;
-  border-radius: 14px;
-  padding: 1px;
+  min-height: 220px;
   box-sizing: border-box;
+  animation: glow 2s infinite ease-in-out;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-.project-left img {
+.project-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
+/* Columna derecha */
 .project-right {
   flex: 1.5;
-  padding: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-self: center;
+  justify-content: flex-start;
+  /*align-self: center;*/
   color: #00ffff;
   text-align: left;
 }
 
 .project-right h3 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 12px;
   text-shadow: 0 0 6px #00ffff;
+
+  /* Alineación flex para separar el texto de los logos */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap; /* Permite que se ajuste si la pantalla es pequeña */
 }
 
 .project-right p {
@@ -92,139 +102,8 @@
   line-height: 1.4;
 }
 
-.tech-icons {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.tech-icons img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 4px #00ffff);
-}
-
-.project-image-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease;
-  /* CAMBIO AQUÍ: Forzamos la proporción a 16:9 para que sea rectangular, no cuadrado */
-  aspect-ratio: 16 / 9;
-  height: auto;
-}
-
-.project-image-wrapper:hover {
-  transform: perspective(800px) scale(0.9);
-}
-
-.project-image-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: filter 0.3s ease;
-}
-
-.project-hover {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Centra verticalmente */
-  gap: 10px;
-  padding: 16px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 0.4s ease; /* Añadida transición suave */
-  z-index: 2;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.project-image-wrapper:hover .project-hover,
-.project-image-wrapper.active .project-hover {
-  opacity: 1;
-}
-
-.project-hover video {
-  position: absolute; /* Volvemos al posicionamiento absoluto para que llene el wrapper */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* CAMBIO AQUÍ: Usamos cover. Como el wrapper ya es 16:9 (la proporción del video),
-     el video llenará todo el espacio perfectamente con recortes mínimos o nulos. */
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  /* Quitamos margin: auto y background-color que ya no hacen falta */
-  margin: 0;
-  background-color: transparent;
-}
-
-.project-hover .btn {
-  position: absolute;
-  z-index: 3;
-  margin-top: 10px;
-}
-
-.btn {
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: 2px solid #00ffff;
-  color: #00ffff;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: url("../img/screenshots/selection.png"), auto;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #00ffff;
-  color: #000;
-}
-
-.volver-btn {
-  display: block;
-  margin: 60px auto 0 auto; /* top margin + centrado horizontal */
-  padding: 12px 24px;
-  font-size: 1rem;
-  transition: background 0.3s, transform 0.3s;
-}
-
+/* Evita el scroll */
 .no-scroll {
   overflow: hidden;
   height: 100vh;
-}
-
-/*Botón información*/
-.info-icon {
-  width: 32px;
-  height: 32px;
-  margin-left: 8px;
-  vertical-align: middle;
-  cursor: url("../img/screenshots/selection.png"), auto;
-  transition: transform 0.2s ease;
-}
-
-.info-icon:hover {
-  transform: scale(1.2);
-}
-
-/*Icono de plataforma*/
-.platform-icon {
-  width: 40px;
-  height: 40px;
-  margin-left: 8px;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 1px #000000aa);
 }

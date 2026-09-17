@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-@import "hero.css";
+@import "intro.css";
 @import "matrix.css";
 @import "layout.css";
 @import "buttons.css";
 @import "animations.css";
+@import "scrollbar.css";
 @import "portfolio.css";
-@import "modal.css";
+@import "info.css";
+@import "icons.css";
 @import "mobile.css";
 @import "mouse.css";
-@import "scrollbar.css";
+@import "modal.css";
 @import "link.css";
