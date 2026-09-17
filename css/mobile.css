@@ -63,37 +63,53 @@
     flex-wrap: wrap;
   }
 
+  /* === CONTENEDOR PRINCIPAL DEL MODAL === */
+  .modal-content {
+    width: 92vw !important;        /* Forzamos a que ocupe el 92% del ancho visible de la pantalla */
+    max-width: 92vw !important;
+    max-height: 85vh;              /* Altura máxima con espacio arriba/abajo */
+    padding: 20px 16px;            /* Margen interno para el contenido */
+    box-sizing: border-box !important;
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow-y: auto;              /* Scroll vertical interno si el texto es muy largo */
+  }
+
+  /* === TEXTO Y CONTENIDO DENTRO DEL MODAL === */
+  .modal-text {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
   .modal-text h3 {
-    font-size: 2rem;
+    font-size: 1.4rem !important;  /* Reducimos el tamaño para que títulos largos (como LipidWise) quepan enteros */
+    word-break: break-word;        /* Si hay una palabra larguísima, la parte sin romper la pantalla */
+    margin-top: 10px;
   }
 
   .modal-text h4 {
-    font-size: 1rem;
+    font-size: 0.95rem !important;
   }
 
-  .modal-text p {
-    font-size: 0.8rem;
-  }
-
+  .modal-text p, 
   .modal-text ul {
-  font-size: 0.8rem;
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+    word-break: break-word;        /* Evita que los textos largos empujen el modal hacia los lados */
+  }
+
+  /* Imágenes dentro del modal */
+  .modal-content img {
+    max-width: 100% !important;   /* Garantiza que la imagen nunca supere el ancho de la caja */
+    height: auto !important;
+    object-fit: contain;
   }
 
   /*Icono de plataforma*/
   .platform-icon {
     width: 20px;
     height: 20px;
-  }
-
-  /* Ajustes de espacio del modal */
-  .modal-content {
-    width: 90%;
-    max-width: 500px;
-    max-height: 85vh;
-    padding: 24px 20px;
-    box-sizing: border-box;
-    border-radius: 16px;
-    overflow-y: auto;
   }
 }
 
